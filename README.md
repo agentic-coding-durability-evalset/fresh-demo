@@ -47,10 +47,6 @@ fresh-demo/
 ### 安装和运行
 
 ```bash
-# 克隆项目
-git clone <repository-url>
-cd fresh-demo
-
 # 运行开发服务器
 deno task dev
 # 或
