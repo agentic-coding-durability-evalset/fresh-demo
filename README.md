@@ -1,105 +1,105 @@
 # Fresh Demo
 
-一个基于 [Fresh](https://fresh.deno.dev/) 框架的 Deno 全栈 Web 应用示例项目。Fresh 是一个为 Deno 设计的现代 Web 框架，支持 Islands 架构和零配置。
+A Deno full-stack Web application demo project based on the [Fresh](https://fresh.deno.dev/) framework. Fresh is a modern Web framework designed for Deno, supporting Islands architecture and zero configuration.
 
-## 技术栈
+## Tech Stack
 
-- **Deno**: 最新版本
+- **Deno**: Latest version
 - **Fresh**: 2.1.3+
 - **Preact**: 10.27.2
 - **Vite**: 7.1.3
 - **Tailwind CSS**: 4.1.10
 - **DaisyUI**: 5.3.9
 
-## 项目结构
+## Project Structure
 
 ```
 fresh-demo/
-├── routes/              # 基于文件系统的路由
+├── routes/              # File-system-based routing
 │   └── ...
-├── islands/             # 交互式 Islands 组件
+├── islands/             # Interactive Islands components
 │   └── ...
-├── components/          # 共享组件
+├── components/          # Shared components
 │   └── ...
-├── static/              # 静态资源
-├── main.ts              # 应用入口和配置
-├── deno.json            # Deno 配置
-├── vite.config.ts       # Vite 配置
+├── static/              # Static assets
+├── main.ts              # Application entry point and configuration
+├── deno.json            # Deno configuration
+├── vite.config.ts       # Vite configuration
 └── README.md
 ```
 
-## 功能特性
+## Features
 
-- Islands 架构（部分水合）
-- 基于文件系统的路由
-- 服务端渲染 (SSR)
-- 零配置设置
-- TypeScript 支持
-- Tailwind CSS 集成
-- 热重载开发体验
+- Islands architecture (partial hydration)
+- File-system-based routing
+- Server-Side Rendering (SSR)
+- Zero-configuration setup
+- TypeScript support
+- Tailwind CSS integration
+- Hot reload development experience
 
-## 快速开始
+## Quick Start
 
-### 前置要求
+### Prerequisites
 
-- [Deno](https://deno.com/) 最新版本
+- [Deno](https://deno.com/) latest version
 
-### 安装和运行
+### Installation and Running
 
 ```bash
-# 运行开发服务器
+# Run development server
 deno task dev
-# 或
+# Or
 deno task start
 ```
 
-应用将在 `http://localhost:8000` 启动。
+The application will start at `http://localhost:8000`.
 
-### 构建和部署
+### Build and Deploy
 
 ```bash
-# 构建生产版本
+# Build production version
 deno task build
 
-# 启动生产服务器
+# Start production server
 deno task start
 
-# 代码检查
+# Code check
 deno task check
 ```
 
-## 项目特点
+## Project Features
 
-### Islands 架构
+### Islands Architecture
 
-Fresh 使用 Islands 架构：
-- 默认服务端渲染
-- 只对交互式组件进行客户端水合
-- 更小的 JavaScript 包
-- 更快的初始加载
+Fresh uses Islands architecture:
+- Server-side rendering by default
+- Only interactive components are hydrated on the client
+- Smaller JavaScript bundles
+- Faster initial loading
 
-### 路由系统
+### Routing System
 
-基于文件系统的路由：
-- `routes/` 目录定义路由
-- 自动处理动态路由
-- 支持中间件
-- API 路由支持
+File-system-based routing:
+- `routes/` directory defines routes
+- Automatically handles dynamic routes
+- Middleware support
+- API routes support
 
-### 示例路由
+### Example Routes
 
-- **`/api/:name`**: API 路由示例
-- **`/api2/:name`**: 程序化定义的路由
+- **`/api/:name`**: API route example
+- **`/api2/:name`**: Programmatically defined route
 
-## 开发
+## Development
 
-### 热重载
+### Hot Reload
 
-Fresh 提供快速刷新功能，修改代码会自动更新。
+Fresh provides fast refresh functionality that automatically updates when code is modified.
 
-### 中间件
+### Middleware
 
-支持中间件系统：
+Supports middleware system:
 
 ```typescript
 app.use(async (ctx) => {
@@ -108,72 +108,72 @@ app.use(async (ctx) => {
 });
 ```
 
-### 静态文件
+### Static Files
 
-静态文件服务：
+Static file serving:
 
 ```typescript
 app.use(staticFiles());
 ```
 
-## 代码说明
+## Code Description
 
-### 主应用 (`main.ts`)
+### Main Application (`main.ts`)
 
-应用配置包括：
-- 静态文件服务
-- 中间件定义
-- 路由注册
-- 文件系统路由集成
+Application configuration includes:
+- Static file serving
+- Middleware definitions
+- Route registration
+- File-system routing integration
 
 ### Islands
 
-交互式组件放在 `islands/` 目录：
-- 只在客户端运行
-- 自动水合
-- 支持 Preact Hooks
+Interactive components placed in `islands/` directory:
+- Only run on the client
+- Automatic hydration
+- Support for Preact Hooks
 
-### 组件
+### Components
 
-共享组件放在 `components/` 目录：
-- 服务端和客户端都可以使用
-- 支持 JSX/TSX
+Shared components placed in `components/` directory:
+- Can be used on both server and client
+- Support for JSX/TSX
 
-## 部署
+## Deployment
 
-### Deno Deploy（推荐）
+### Deno Deploy (Recommended)
 
-Fresh 应用可以一键部署到 Deno Deploy：
+Fresh applications can be deployed to Deno Deploy with one click:
 
 ```bash
-# 使用 Deno Deploy CLI
+# Using Deno Deploy CLI
 deployctl deploy --project=your-project
 ```
 
-### 其他平台
+### Other Platforms
 
 - Docker
-- 自托管服务器
-- 任何支持 Deno 的平台
+- Self-hosted servers
+- Any platform supporting Deno
 
-## 优势
+## Advantages
 
-### 性能
+### Performance
 
-- 零 JavaScript 默认（Islands 架构）
-- 快速的服务端渲染
-- 优化的资源加载
+- Zero JavaScript by default (Islands architecture)
+- Fast server-side rendering
+- Optimized resource loading
 
-### 开发体验
+### Development Experience
 
-- 零配置
-- TypeScript 原生支持
-- 快速反馈循环
-- 现代化工具链
+- Zero configuration
+- Native TypeScript support
+- Fast feedback loop
+- Modern toolchain
 
-## 参考资源
+## References
 
-- [Fresh 官方网站](https://fresh.deno.dev/)
-- [Fresh 文档](https://fresh.deno.dev/docs)
-- [Deno 文档](https://deno.com/manual)
-- [Preact 文档](https://preactjs.com/)
+- [Fresh Official Website](https://fresh.deno.dev/)
+- [Fresh Documentation](https://fresh.deno.dev/docs)
+- [Deno Documentation](https://deno.com/manual)
+- [Preact Documentation](https://preactjs.com/)
